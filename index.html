@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Partilipi task</title>
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+	</head>
+	<body>
+		<div class="container">
+			<form action="details.html" method="GET" role="form" id="form">
+				<legend>Flight Reservation</legend>
+				<select name="source" id="source" class="form-control" required="required">
+					<option value="">---Select Source---</option>
+					<option value="1">Chennai</option>
+					<option value="2">Kolkata</option>
+					<option value="3">Bangalore</option>
+					<option value="4">Delhi</option>
+				</select>
+				<br>
+				<select name="destination" id="destination" class="form-control" required="required">
+					<option value="">---Select Destination---</option>
+					<option value="1">Chennai</option>
+					<option value="2">Kolkata</option>
+					<option value="3">Bangalore</option>
+					<option value="4">Delhi</option>
+				</select>
+
+				<br>
+
+				<select name="seats" id="seats" class="form-control" required="required">
+					<option value="">---Select Number of Seats---</option>
+					<option value="1">1</option>
+					<option value="2">2</option>
+					<option value="3">3</option>
+					<option value="4">4</option>
+				</select>
+
+				<br>
+
+				<button type="submit" class="btn btn-primary">Submit</button>
+			</form>
+		</div>
+		<script src="js/jquery.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<script src="js/valid.js"></script>
+	</body>
+</html>

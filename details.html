@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Partilipi task</title>
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+		<link href="sort/themes/blue/style.css" rel="stylesheet" type="text/css" />
+		<link rel="stylesheet" href="css/bootstrap-slider.min.css">
+	</head>
+	<body>
+		<div class="container">
+			<br>
+			<br>
+			<div class="row">
+				<div class="col-xs-24 col-sm-24 col-md-8 col-lg-8">
+					<h4>Source :<span id="source"></h4>
+				</div>
+				<div class="col-xs-24 col-sm-24 col-md-8 col-lg-8">
+					<h4>Destination :<span id="destination"></h4>			
+				</div>
+				<div class="col-xs-24 col-sm-24 col-md-8 col-lg-8">
+					<h4>Number of seats :<span id="seats"></h4>							
+				</div>
+			</div>
+			<hr>
+			<div class="row">
+				<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+					<div class="dropdown" style="margin:5px 0px;">
+					 <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+					      Filter Airlines
+					      <span class="caret"></span>
+					   </button>
+					  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+					    <div class="checkbox">
+					      <label><input type="checkbox" class="airline" onclick="change_airline(1)" value="1">Air India</label>
+					    </div>
+					    <div class="checkbox">
+					      <label><input type="checkbox" class="airline" onclick="change_airline(0)" value="0">Jet Airways</label>
+					    </div>
+					    <div class="checkbox">
+					      <label><input type="checkbox" class="airline" onclick="change_airline(2)" value="2">Indigo</label>
+					    </div>
+					  </ul>
+					</div>
+				</div>
+				<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+					<div class="dropdown" style="margin:5px 0px;">
+					 <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+					      Filter Duration
+					      <span class="caret"></span>
+					   </button>
+					  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+					    <div class="checkbox">
+					      <label><input type="checkbox" class="airline" onclick="change_duration(60)" value="1">0 - 1 Hour</label>
+					    </div>
+					    <div class="checkbox">
+					      <label><input type="checkbox" class="airline" onclick="change_duration(120)" value="0">1 - 2 Hour</label>
+					    </div>
+					    <div class="checkbox">
+					      <label><input type="checkbox" class="airline" onclick="change_duration(180)" value="2">2 - 3 Hour</label>
+					    </div>
+					  </ul>
+					</div>
+				</div>
+				<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+					<div class="dropdown" style="margin:5px 0px;">
+					 <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+					      Filter Arrival
+					      <span class="caret"></span>
+					   </button>
+					  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+					    <div class="checkbox">
+					      <label><input type="checkbox" class="airline" onclick="change_arrival('0:00 AM')" value="1">0:00 - 2:59 AM</label>
+					    </div>
+					    <div class="checkbox">
+					      <label><input type="checkbox" class="airline" onclick="change_arrival('3:00 AM')" value="2">3:00 - 5:59 AM</label>
+					    </div>
+					    <div class="checkbox">
+					      <label><input type="checkbox" class="airline" onclick="change_arrival('6:00 AM')" value="3">6:00 - 8:59 AM</label>
+					    </div>
+					    <div class="checkbox">
+					      <label><input type="checkbox" class="airline" onclick="change_arrival('9:00 AM')" value="4">9:00 - 11:59 AM</label>
+					    </div>
+					    <div class="checkbox">
+					      <label><input type="checkbox" class="airline" onclick="change_arrival('12:00 PM')" value="5">0:00 - 2:59 PM</label>
+					    </div>
+					    <div class="checkbox">
+					      <label><input type="checkbox" class="airline" onclick="change_arrival('3:00 PM')" value="6">3:00 - 5:59 PM</label>
+					    </div>
+					    <div class="checkbox">
+					      <label><input type="checkbox" class="airline" onclick="change_arrival('6:00 PM')" value="7">6:00 - 8:59 PM</label>
+					    </div>
+					    <div class="checkbox">
+					      <label><input type="checkbox" class="airline" onclick="change_arrival('9:00 PM')" value="8">9:00 - 11:59 PM</label>
+					    </div>
+					  </ul>
+					</div>
+				</div>
+				<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+					<div class="dropdown" style="margin:5px 0px;">
+					 <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+					      Filter Departure
+					      <span class="caret"></span>
+					   </button>
+					  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+					    <div class="checkbox">
+					      <label><input type="checkbox" class="airline" onclick="change_departure('0:00 AM')" value="1">0:00 - 2:59 AM</label>
+					    </div>
+					    <div class="checkbox">
+					      <label><input type="checkbox" class="airline" onclick="change_departure('3:00 AM')" value="2">3:00 - 5:59 AM</label>
+					    </div>
+					    <div class="checkbox">
+					      <label><input type="checkbox" class="airline" onclick="change_departure('6:00 AM')" value="3">6:00 - 8:59 AM</label>
+					    </div>
+					    <div class="checkbox">
+					      <label><input type="checkbox" class="airline" onclick="change_departure('9:00 AM')" value="4">9:00 - 11:59 AM</label>
+					    </div>
+					    <div class="checkbox">
+					      <label><input type="checkbox" class="airline" onclick="change_departure('12:00 PM')" value="5">0:00 - 2:59 PM</label>
+					    </div>
+					    <div class="checkbox">
+					      <label><input type="checkbox" class="airline" onclick="change_departure('3:00 PM')" value="6">3:00 - 5:59 PM</label>
+					    </div>
+					    <div class="checkbox">
+					      <label><input type="checkbox" class="airline" onclick="change_departure('6:00 PM')" value="7">6:00 - 8:59 PM</label>
+					    </div>
+					    <div class="checkbox">
+					      <label><input type="checkbox" class="airline" onclick="change_departure('9:00 PM')" value="8">9:00 - 11:59 PM</label>
+					    </div>
+					  </ul>
+					</div>
+				</div>
+				<div class="col-xs-24 col-sm-24 col-md-8 col-lg-8">
+					<p class="text-center">Filter by price interval:<br><span id="money_start">1000</span> to <span id="money_end">10000</span> </p>
+					<div class="row" style="text-align:left">
+						<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+							<label><b>€ 1000</b></label>		
+						</div>
+						<div class="col-xs-16 col-sm-16 col-md-16 col-lg-16">
+			<input id="ex2" type="text" class="span2" value="" data-slider-min="1000" data-slider-max="10000" data-slider-step="100" data-slider-value="[0,10000]"/>			</div>
+						<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+							<label><b>€ 10000</b></label>								
+						</div>
+					</div>
+				</div>
+			</div>
+			<br>
+			<div class="row">
+				<div class="col-xs-24 col-sm-24 col-md-24 col-lg-24">
+					<div class="table-responsive" style="overflow-x:auto">
+						<table class="table tablesorter" id="flightTable" >
+							<thead>
+								<tr>
+									<th class="indexing">index</th>					 	
+									<th>From</th>
+									<th>To</th>
+									<th>Departure&nbsp;&nbsp;&nbsp;</th>
+									<th>Arrival&nbsp;&nbsp;&nbsp;</th>
+									<th>Duration&nbsp;&nbsp;&nbsp;</th>
+									<th>Airline&nbsp;&nbsp;&nbsp;</th>
+									<th>Seats&nbsp;&nbsp;&nbsp;</th>
+									<th>Price&nbsp;&nbsp;&nbsp;</th>
+								</tr>
+							</thead>
+							<tbody id="flightTableBody">
+								
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-24 col-sm-24 col-md-24 col-lg-24">
+					<h3 class="text-center" id="notfound" style="visibility:hidden">No Flight found for this route with given filters</h3>
+				</div>
+			</div>
+		</div>		
+		<script src="js/jquery.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<script src="sort/jquery.tablesorter.min.js"></script>
+		<script src="js/bootstrap-slider.min.js"></script>
+		<script src="js/flight.js"></script>
+	</body>
+</html>
